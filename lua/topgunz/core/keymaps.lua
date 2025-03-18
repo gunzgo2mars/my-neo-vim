@@ -35,3 +35,5 @@ end, { desc = "Debug go test" })
 keymap.set("n", "<leader>dbgl", function()
 	require("dap-go").debug_last_test()
 end, { desc = "Debug last go test" })
+
+keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })

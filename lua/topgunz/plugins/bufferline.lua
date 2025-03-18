@@ -7,14 +7,26 @@ return {
 	config = function()
 		require("bufferline").setup({
 			options = {
+				diagnostics = "nvim_lsp",
+				diagnostics_update_on_event = true,
+				diagnostics_indicator = function(count, level, diagnostics_dict, context)
+					local s = " "
+					for e, n in pairs(diagnostics_dict) do
+						local sym = e == "error" and " " or (e == "warning" and " " or " ")
+						s = s .. n .. sym
+					end
+
+					return s
+				end,
 				mode = "tabs",
-				separator_style = "slope",
+				separator_style = "thick",
 				groups = {
 					options = {
 						toggle_hidden_on_enter = true,
 					},
 					items = {
 						{
+							auto_close = false,
 							name = "Tests", -- Mandatory
 							highlight = { underline = true, sp = "blue" }, -- Optional
 							priority = 2, -- determines where it will appear relative to other groups (Optional)
