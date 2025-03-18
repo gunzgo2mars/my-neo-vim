@@ -21,7 +21,6 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
-
 opt.backspace = "indent,eol,start"
 
 opt.clipboard:append("unnamedplus")
@@ -31,3 +30,4 @@ opt.splitbelow = true
 
 opt.swapfile = false
 
+opt.fillchars = "eob: "
