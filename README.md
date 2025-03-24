@@ -1,4 +1,6 @@
-### 🚀 Topgunz's nvim custom configuration and plugins. 🚀
+## 🚀 Topgunz's nvim custom configuration and plugins. 🚀
+
+<img src="https://images.gamebanana.com/img/ss/mods/60a6af07e640b.jpg" width="300" height="200">
 
 ##### 🛠️ Prerequisites
 
