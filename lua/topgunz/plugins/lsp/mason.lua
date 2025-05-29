@@ -41,6 +41,7 @@ return {
 				"pyright",
 				"gopls",
 				"rust_analyzer",
+        "clangd",
 			},
 		})
 
@@ -52,6 +53,7 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
+        "clang-format",
 			},
 		})
 	end,
