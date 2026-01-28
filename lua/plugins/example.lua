@@ -11,6 +11,18 @@ if true then return {} end
 return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
+  {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      explorer = {
+        -- your explorer configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        colorscheme = "solarized-osaka",
+      },
+    },
+  },
 
   -- Configure LazyVim to load gruvbox
   {
@@ -33,10 +45,17 @@ return {
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
+      opts.window = {
+        completion = {
+          border = "rounded",
+          winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:CmpSelection,Search:None",
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder",
+        },
+      }
     end,
   },
 
@@ -134,6 +153,8 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "go",
+        "rust",
       },
     },
   },
@@ -148,6 +169,8 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "tsx",
         "typescript",
+        "go",
+        "rust",
       })
     end,
   },
@@ -171,7 +194,7 @@ return {
     event = "VeryLazy",
     opts = function()
       return {
-        --[[add your custom lualine config here]]
+        theme = "solarized-osaka",
       }
     end,
   },
